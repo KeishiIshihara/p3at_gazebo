@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<launch>
+ 
+  <include file="$(find p3at_gazebo)/launch/upload_pioneer3at.xml"/>
+  <remap from="/p3at/laser/scan" to="/scan"/>
+  <remap from="/kinect/depth/points" to="/points2"/>
+
+  <!--the pointsTF-->
+  <!--<node pkg="p3at_carto" type="points2TF" name="points2TF"></node>-->
+
+  <!--teleop-->
+  <node pkg="p3at_teleop" type="p3at_teleop" name="p3at_teleop" output="screen" launch-prefix="xterm -e"></node>
+
+
+  <!-- start Gazebo (TODO: add arguments) -->
+  <include file="$(find p3at_gazebo)/launch/trial_world.launch" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_pioneer" pkg="gazebo_ros" type="spawn_model" args="-z 0.051 -urdf -param robot_description -model robot_description" respawn="false" output="screen" />
+  
+  <!-- load configuration -->
+  <rosparam command="load" file="$(find joint_state_controller)/joint_state_controller.yaml" />
+
+  <!-- spawn controller -->
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="joint_state_controller" />
+
+ <!-- publish TFs for static links -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub">
+    <param name="publish_frequency" type="double" value="30.0"/>
+    <param name="tf_prefix" type="string" value=""/>
+ 
+  </node>
+
+ <!-- <node pkg="tf" type="static_transform_publisher" name="lbw_base_tf" args="-0.134 0.156 0.111 0 0 0 p3at_back_left_wheel base_link 100"/> -->
+ <!-- <node pkg="tf" type="static_transform_publisher" name="base_imu_tf" args="0 0 0 0 0 0 base_link imu 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="base_kin_tf" args="0 0 1.19 0 0 0 base_link kinect_link 100"/> -->
+</launch>

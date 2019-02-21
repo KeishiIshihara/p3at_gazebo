@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+
+ <env name="GAZEBO_MODEL_PATH" value="$(find p3at_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find p3at_gazebo)/worlds/simple_office_with_people.world"/>       
+    <arg name="paused" value="false"/>
+  </include>
+ 
+</launch>

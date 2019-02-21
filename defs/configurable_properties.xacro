@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<robot name="pioneer3at" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<!-- Laser Range Finder position-->
+	<xacro:property name="lrf_bar_x" value="0.044"/>
+	<xacro:property name="lrf_bar_z" value="0.30"/>
+	<xacro:property name="lrf_y" value="0"/>
+	
+	<!-- Kinect position (front) -->
+	<!--xacro:property name="kinect_bar_x" value="0.0"/>
+	<xacro:property name="kinect_bar_y" value="0.0"/>
+	<xacro:property name="kinect_bar_z" value="1.07"/>
+	<xacro:property name="kinect_pitch" value="0.06"/>
+	<xacro:property name="kinect_roll" value="0.02"/>
+	<xacro:property name="kinect_yaw" value="0.0"/>
+	<xacro:property name="kinect_y" value="0.0"/-->
+	
+	<!-- ASUS position (towards rear) -->
+	<xacro:property name="kinect_bar_x" value="-0.047"/>
+	<xacro:property name="kinect_bar_y" value="0.045"/>
+	<xacro:property name="kinect_bar_z" value="0.827"/>
+	<xacro:property name="kinect_pitch" value="0.00"/>
+	<xacro:property name="kinect_roll" value="0.00"/>
+	<xacro:property name="kinect_yaw" value="-3.14"/>
+	<xacro:property name="kinect_y" value="0.0"/>
+	
+	<!-- Kinect KTP dataset -->
+	<xacro:property name="kinect_bar_x" value="-0.225"/>
+	<xacro:property name="kinect_bar_y" value="-0.103"/>
+	<xacro:property name="kinect_bar_z" value="1.041"/>
+	<xacro:property name="kinect_pitch" value="0.08"/>
+	<xacro:property name="kinect_roll" value="0.00"/>
+	<xacro:property name="kinect_yaw" value="-1.57"/>
+	<xacro:property name="kinect_y" value="-0.0"/>
+	
+	<!-- Kinect position before June 2012 (verso avanti) -->
+	<!--xacro:property name="kinect_bar_x" value="0.0"/>
+	<xacro:property name="kinect_bar_y" value="0.0"/>
+	<xacro:property name="kinect_bar_z" value="1.07"/>
+	<xacro:property name="kinect_pitch" value="0.09"/>
+	<xacro:property name="kinect_roll" value="0.02"/>
+	<xacro:property name="kinect_yaw" value="0.11"/>
+	<xacro:property name="kinect_y" value="0.0"/-->
+
+	<!-- Kinect position -->
+	<!--xacro:property name="kinect_bar_x" value="0.0"/>
+	<xacro:property name="kinect_bar_z" value="0.32"/>
+	<xacro:property name="kinect_pitch" value="0.09"/>
+	<xacro:property name="kinect_roll" value="0.02"/>
+	<xacro:property name="kinect_yaw" value="0.11"/>
+	<xacro:property name="kinect_y" value="0.0"/-->
+		
+	<!-- Kinect position -->
+	<!--<xacro:property name="kinect_bar_x" value="0.35"/>
+	<xacro:property name="kinect_bar_z" value="1.05"/>
+	<xacro:property name="kinect_pitch" value="0.14"/>
+	<xacro:property name="kinect_roll" value="0.02"/>
+	<xacro:property name="kinect_yaw" value="1.57"/>
+	<xacro:property name="kinect_y" value="0.15"/>-->
+	
+	<!-- Kinect inclined as a videosurveillance camera -->
+	<!--xacro:property name="kinect_bar_x" value="0.0"/>
+	<xacro:property name="kinect_bar_z" value="2.7"/>
+	<xacro:property name="kinect_pitch" value="0.6"/>
+	<xacro:property name="kinect_roll" value="0.00"/>
+	<xacro:property name="kinect_yaw" value="0.0"/>
+	<xacro:property name="kinect_y" value="0.0"/-->
+	
+	
+</robot>
